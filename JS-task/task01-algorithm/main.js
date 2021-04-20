@@ -11,7 +11,11 @@ const customerList = [{ "id": 1, "name": "Janeva Ciccone", "email": "jciccone0@i
 ];
 
 const customerFilter = (list, name, rating) => {
-    return null;
+    return list
+    .filter(customer => customer.name
+        .toLowerCase().includes(name.toLowerCase())
+         && customer.rating >= rating && rating<5)
+    .map(item => item.name);
 };
 
 if (typeof module !== 'undefined') {
